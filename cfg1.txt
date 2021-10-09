@@ -1,0 +1,20 @@
+
+int se1/1
+ip add 34.0.0.4 255.0.0.0 
+no sh
+exit
+int se1/0
+ip add 45.0.0.4 255.0.0.0 
+no sh
+exit
+do wr
+do copy ru sta
+
+
+C:\Users\pc\GNS3\Projects\BGP
+
+R5(config)#router bgp 3
+R5(config-router)#no neighbor 56.0.0.6 filter-list 44 in
+R5(config-router)#no neighbor 56.0.0.6 filter-list 44 out
+R5(config-router)#neighbor 45.0.0.4 filter-list 22 in
+R5(config-router)#no neighbor 45.0.0.4 filter-list 22 out
